@@ -1,23 +1,26 @@
 print("The price of Apple is 20 pesos")
 print("The price of Oranges is 25 pesos")
 
-def QuantityofFruits():
-    ApplePrice= 20
-    OrangePrice=25
+def User_Input_Fruits():
     Quantity_of_A=int(input("How many apples you want to buy? "))
     Quantity_of_O= int(input("How many oranges you want to buy? "))
-    TotalApples= Quantity_of_A * ApplePrice
-    TotalOranges= Quantity_of_O * OrangePrice
+    return Quantity_of_A, Quantity_of_O
+
+def Calculations_of_Fruits(UserApple, UserOranges): 
+    ApplePrice= 20
+    OrangePrice=25
+    TotalApples= UserApple * ApplePrice
+    TotalOranges= UserOranges * OrangePrice
     TotalAmount= TotalApples + TotalOranges
-    return ApplePrice, OrangePrice, Quantity_of_A, Quantity_of_O, TotalApples, TotalOranges, TotalAmount
-
-def display(AmountT_):
-    print(f"The total amount is {AmountT_}")
-
+    return TotalAmount
+def display():
+    print(f"The total amount is {TotalAmount}")
 
 
 
 
 
-AppleP, OrangeP, AppleF, OrangeF,AppleT,OrangeT, AmountT= QuantityofFruits()
-display(AmountT)
+
+Quantity_of_A, Quantity_of_O= User_Input_Fruits()
+TotalAmount= Calculations_of_Fruits(Quantity_of_A, Quantity_of_O)
+display()
